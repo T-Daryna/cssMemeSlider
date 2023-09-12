@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.container {
+    overflow: hidden;
+    width: 450px;
+    background-color: #615c5b;
+    padding: 15px 30px 85px 30px;
+}
+
+img {
+    width: 450px;
+    border-radius: 2%;
+}
+
+#input-button1,
+#input-button2,
+#input-button3,
+#input-button4 {
+    display: none;
+}
+
+#input-button1:checked~.container .slider {
+    left: 0px;
+}
+
+#input-button2:checked~.container .slider {
+    left: -480px;
+}
+
+#input-button3:checked~.container .slider {
+    left: -960px;
+}
+
+#input-button4:checked~.container .slider {
+    left: -1440px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.label-button {
+    position: relative;
+    cursor: pointer;
+}
+
+.label-button:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 10px;
+    height: 10px;
+    background-color: #6cdedc;
+    border: 2px solid #6cdedc;
+    border-radius: 50%;
+}
+
+
+#input-button1:checked ~.container .input-container  .label1::before {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
+
+#input-button2:checked~.container .input-container .label2::before {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
+
+#input-button3:checked ~.container .input-container .label3::before {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
+
+#input-button4:checked~.container .input-container .label4::before {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
