@@ -5,89 +5,119 @@ body {
     height: 100vh;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 30rem;
+    overflow: hidden;
+    padding: 3rem;
+    background-color: darkgray;
+}
+
 .slider {
     display: flex;
-    gap: 30px;
+    gap: 3rem;
     width: fit-content;
-    position: relative;
     transition: all 0.5s;
 }
 
-.container {
-    overflow: hidden;
-    width: 450px;
-    background-color: #615c5b;
-    padding: 15px 30px 85px 30px;
-}
-
 img {
-    width: 450px;
-    border-radius: 2%;
-}
-
-#input-button1,
-#input-button2,
-#input-button3,
-#input-button4 {
-    display: none;
-}
-
-#input-button1:checked~.container .slider {
-    left: 0px;
-}
-
-#input-button2:checked~.container .slider {
-    left: -480px;
-}
-
-#input-button3:checked~.container .slider {
-    left: -960px;
-}
-
-#input-button4:checked~.container .slider {
-    left: -1440px;
-}
-
-.input-container {
-    display: flex;
-    justify-content: end;
-    gap: 20px;
+    width: 30rem;
+    border-radius: 1%;
 }
 
 .label-button {
-    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.5s;
     cursor: pointer;
 }
 
-.label-button:before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    width: 10px;
-    height: 10px;
-    background-color: #6cdedc;
-    border: 2px solid #6cdedc;
+.div-button {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: royalblue;
+    border: 2px solid royalblue;
     border-radius: 50%;
+    display: inline-block;
+    transition: all 0.5s; 
+    margin: 0.4rem;
+}
+
+.radio-button {
+    display: none;
+}
+
+#input-button1:checked ~ .container .slider {
+    transform: translateX(0rem);
+}
+#input-button2:checked ~ .container .slider {
+    transform: translateX(-33rem);
+}
+#input-button3:checked ~ .container .slider {
+    transform: translateX(-66rem);
+}
+#input-button4:checked ~ .container .slider {
+    transform: translateX(-99rem);
 }
 
 
-#input-button1:checked ~.container .input-container  .label1::before {
+#input-button1:checked ~ .container .label-container .slider-label .label1 .div-button1{
     background-color: transparent;
-    border: 2px solid #ffffff;
+    border: 2px solid royalblue;
+}
+#input-button2:checked ~ .container .label-container .slider-label .label2 .div-button2{
+    background-color: transparent;
+    border: 2px solid royalblue;
+}
+#input-button3:checked ~ .container .label-container .slider-label .label3 .div-button3{
+    background-color: transparent;
+    border: 2px solid royalblue;
+}
+#input-button4:checked ~ .container .label-container .slider-label .label4 .div-button4{
+    background-color: transparent;
+    border: 2px solid royalblue;
 }
 
-#input-button2:checked~.container .input-container .label2::before {
-    background-color: transparent;
-    border: 2px solid #ffffff;
+
+.label-button:hover > .div-button{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255) !important;
 }
 
-#input-button3:checked ~.container .input-container .label3::before {
-    background-color: transparent;
-    border: 2px solid #ffffff;
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#input-button4:checked~.container .input-container .label4::before {
-    background-color: transparent;
-    border: 2px solid #ffffff;
+.text-container {
+    width: 3rem;
+    overflow: hidden;
+}
+
+.text {
+    font-size: 1.3rem;
+    display: flex;
+    gap: 2rem;
+    transition: all 1s;
+
+}
+
+
+#input-button1:checked ~ .container .text-container .text{
+    transform: translateX(0rem);
+}
+#input-button2:checked ~ .container .text-container .text{
+    transform: translateX(-4.8rem);
+}
+#input-button3:checked ~ .container .text-container .text{
+    transform: translateX(-9.8rem);
+}
+#input-button4:checked ~ .container .text-container .text{
+    transform: translateX(-14.8rem);
 }
