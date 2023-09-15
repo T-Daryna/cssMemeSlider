@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: #e6f4ff;
 }
 
 .container {
@@ -96,16 +97,23 @@ img {
 }
 
 .text-container {
-    width: 3rem;
+    width: 17rem;
     overflow: hidden;
 }
 
 .text {
     font-size: 1.3rem;
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     transition: all 1s;
+    width: 78rem;
+}
 
+.text1, .text2, .text3, .text4 {
+    color: white;
+    text-shadow: 1px 1px #1c1f5f;
+    display: inline-block;
+    width: 17rem;
 }
 
 
@@ -113,11 +121,41 @@ img {
     transform: translateX(0rem);
 }
 #input-button2:checked ~ .container .text-container .text{
-    transform: translateX(-4.8rem);
+    transform: translateX(-20rem);
 }
 #input-button3:checked ~ .container .text-container .text{
-    transform: translateX(-9.8rem);
+    transform: translateX(-40rem);
 }
 #input-button4:checked ~ .container .text-container .text{
-    transform: translateX(-14.8rem);
+    transform: translateX(-60rem);
+}
+
+
+@media screen and (max-width: 615px) {
+    .label-container {
+        flex-direction: column-reverse;
+        align-items: normal;
+    }
+
+    .slider-label {
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    #input-button1:checked ~ .container .slider {
+        transform: translateX(0rem);
+    }
+    #input-button2:checked ~ .container .slider {
+        transform: translateX(calc(-100% - 3rem));
+    }
+    #input-button3:checked ~ .container .slider {
+        transform: translateX(calc(-200% - 6rem));
+    }
+    #input-button4:checked ~ .container .slider {
+        transform: translateX(calc(-300% - 9rem));
+    }
 }
