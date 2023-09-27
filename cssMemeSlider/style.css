@@ -1,0 +1,161 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e6f4ff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 30rem;
+    overflow: hidden;
+    padding: 3rem;
+    background-color: darkgray;
+}
+
+.slider {
+    display: flex;
+    gap: 3rem;
+    width: fit-content;
+    transition: all 0.5s;
+}
+
+img {
+    width: 30rem;
+    border-radius: 1%;
+}
+
+.label-button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.div-button {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: royalblue;
+    border: 2px solid royalblue;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.5s; 
+    margin: 0.4rem;
+}
+
+.radio-button {
+    display: none;
+}
+
+#input-button1:checked ~ .container .slider {
+    transform: translateX(0rem);
+}
+#input-button2:checked ~ .container .slider {
+    transform: translateX(-33rem);
+}
+#input-button3:checked ~ .container .slider {
+    transform: translateX(-66rem);
+}
+#input-button4:checked ~ .container .slider {
+    transform: translateX(-99rem);
+}
+
+
+#input-button1:checked ~ .container .label-container .slider-label .label1 .div-button1{
+    background-color: transparent;
+    border: 2px solid royalblue;
+}
+#input-button2:checked ~ .container .label-container .slider-label .label2 .div-button2{
+    background-color: transparent;
+    border: 2px solid royalblue;
+}
+#input-button3:checked ~ .container .label-container .slider-label .label3 .div-button3{
+    background-color: transparent;
+    border: 2px solid royalblue;
+}
+#input-button4:checked ~ .container .label-container .slider-label .label4 .div-button4{
+    background-color: transparent;
+    border: 2px solid royalblue;
+}
+
+
+.label-button:hover > .div-button{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255) !important;
+}
+
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-container {
+    width: 17rem;
+    overflow: hidden;
+}
+
+.text {
+    font-size: 1.3rem;
+    display: flex;
+    gap: 3rem;
+    transition: all 1s;
+    width: 78rem;
+}
+
+.text1, .text2, .text3, .text4 {
+    color: white;
+    text-shadow: 1px 1px #1c1f5f;
+    display: inline-block;
+    width: 17rem;
+}
+
+
+#input-button1:checked ~ .container .text-container .text{
+    transform: translateX(0rem);
+}
+#input-button2:checked ~ .container .text-container .text{
+    transform: translateX(-20rem);
+}
+#input-button3:checked ~ .container .text-container .text{
+    transform: translateX(-40rem);
+}
+#input-button4:checked ~ .container .text-container .text{
+    transform: translateX(-60rem);
+}
+
+
+@media screen and (max-width: 615px) {
+    .label-container {
+        flex-direction: column-reverse;
+        align-items: normal;
+    }
+
+    .slider-label {
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    #input-button1:checked ~ .container .slider {
+        transform: translateX(0rem);
+    }
+    #input-button2:checked ~ .container .slider {
+        transform: translateX(calc(-100% - 3rem));
+    }
+    #input-button3:checked ~ .container .slider {
+        transform: translateX(calc(-200% - 6rem));
+    }
+    #input-button4:checked ~ .container .slider {
+        transform: translateX(calc(-300% - 9rem));
+    }
+}
